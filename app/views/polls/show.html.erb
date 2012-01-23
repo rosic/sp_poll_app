@@ -1,0 +1,22 @@
+<h1><%= @poll.question %></h1>
+<%= form_for(@answer, :url => '/poll.gif', :method => :get) do |f| %>
+  <%= f.hidden_field :question_id  %>
+
+  <% unless @answer.errors.empty? -%>
+    <ul class="errors">
+    <% @answer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end -%>
+
+  <ul>
+    <% @poll.answers.each do |id, text| %>
+      <li>
+        <%= f.radio_button :answer, id, :class => 'answer' %>
+        <label for="<%= "#{f.object_name}_answer_#{id}" %>"><%= text %></label>
+      </li>
+    <% end %>
+  </ul>
+  <%= f.submit "Ok", :disabled => true %>
+<% end %>

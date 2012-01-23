@@ -1,0 +1,14 @@
+-
+  :id: 1
+  :question: To live or not to live?
+  :answers:
+    1: 'Yes'
+    2: 'No'
+    3: Maybe
+-
+  :id: 2
+  :question: Should I stay or should I go
+  :answers:
+    1: 'Yes'
+    2: 'No'
+    3: Maybe
